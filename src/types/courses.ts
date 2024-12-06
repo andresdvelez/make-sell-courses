@@ -1,15 +1,3 @@
-export interface Course {
-  _createdAt: string | Date;
-  views: number;
-  author: Author;
-  _id: number;
-  description: string;
-  image: string;
-  category: string;
-  title: string;
-}
+import { Author, Course } from "./sanity";
 
-export interface Author {
-  _id: number;
-  name: string;
-}
+export type CourseType = Omit<Course, "author"> & { author?: Author };

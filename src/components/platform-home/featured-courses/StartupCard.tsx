@@ -1,11 +1,11 @@
 "use client";
 
 import { Link } from "@/i18n/routing";
-import { Course } from "@/types/courses";
+import { CourseType } from "@/types/courses";
 import { formatDate } from "@/utils/formatDate";
 import { Avatar, Button, Chip, Image } from "@nextui-org/react";
 
-export const StartupCard = ({ post }: { post: Course }) => {
+export const StartupCard = ({ post }: { post: CourseType }) => {
   return (
     <li className="course-card group">
       <div className="flex-between">
@@ -21,14 +21,14 @@ export const StartupCard = ({ post }: { post: Course }) => {
       </div>
       <div className="flex-between mt-5 gap-5">
         <div className="flex-1">
-          <Link href={`/user/${post.author._id}`}>
-            <p className="text-16-medium line-clamp-1">{post.author.name}</p>
+          <Link href={`/user/${post.author?._id}`}>
+            <p className="text-16-medium line-clamp-1">{post.author?.name}</p>
           </Link>
           <Link href={`/course/${post._id}`}>
             <h3 className="text-26-semibold line-clamp-1">{post.title}</h3>
           </Link>
         </div>
-        <Link href={`/user/${post.author._id}`}>
+        <Link href={`/user/${post.author?._id}`}>
           <Avatar
             src="https://placehold.co/600x400"
             size="lg"
@@ -46,7 +46,7 @@ export const StartupCard = ({ post }: { post: Course }) => {
         />
       </Link>
       <div className="flex-between gap-3 mt-5">
-        <Link href={`/?query=${post.category.toLowerCase()}`}>
+        <Link href={`/?query=${post.category?.toLowerCase()}`}>
           <Chip className="text-16-medium" color="secondary">
             {post.category}
           </Chip>

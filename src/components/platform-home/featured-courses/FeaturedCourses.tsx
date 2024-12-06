@@ -1,5 +1,8 @@
 import React from "react";
 import { StartupCard } from "./StartupCard";
+import { client } from "@/sanity/lib/client";
+import { COURSES_QUERY } from "@/sanity/lib/queries";
+import { CourseType } from "@/types/courses";
 
 export const FeaturedCourses = async ({
   searchParams,
@@ -8,6 +11,8 @@ export const FeaturedCourses = async ({
 }) => {
   const query = (await searchParams).query;
 
+  const posts = await client.fetch(COURSES_QUERY);
+
   return (
     <section className="section_container">
       <p className="text-30-semibold">
@@ -15,7 +20,9 @@ export const FeaturedCourses = async ({
       </p>
       <ul className="mt-7 card_grid">
         {posts?.length > 0 ? (
-          posts.map((post) => <StartupCard key={post._id} post={post} />)
+          posts.map((post) => (
+            <StartupCard key={post._id} post={post as CourseType} />
+          ))
         ) : (
           <p className="">No courses found</p>
         )}
@@ -23,16 +30,3 @@ export const FeaturedCourses = async ({
     </section>
   );
 };
-
-const posts = [
-  {
-    _createdAt: new Date(),
-    views: 55,
-    author: { _id: 1, name: "Felipe" },
-    _id: 1,
-    description: "This is a description",
-    image: "https://placehold.co/600x400",
-    category: "Necklace",
-    title: "Necklace",
-  },
-];
