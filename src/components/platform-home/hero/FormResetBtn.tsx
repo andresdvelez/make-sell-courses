@@ -13,7 +13,7 @@ export const FormResetBtn = () => {
 
   return (
     <Button
-      type="reset"
+      type="submit"
       onClick={reset}
       isIconOnly
       radius="full"
