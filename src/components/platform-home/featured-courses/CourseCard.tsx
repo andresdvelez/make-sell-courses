@@ -5,7 +5,7 @@ import { CourseType } from "@/types/courses";
 import { formatDate } from "@/utils/formatDate";
 import { Avatar, Button, Chip, Image } from "@nextui-org/react";
 
-export const StartupCard = ({ post }: { post: CourseType }) => {
+export const CourseCard = ({ post }: { post: CourseType }) => {
   return (
     <li className="course-card group">
       <div className="flex-between">
@@ -29,11 +29,7 @@ export const StartupCard = ({ post }: { post: CourseType }) => {
           </Link>
         </div>
         <Link href={`/user/${post.author?._id}`}>
-          <Avatar
-            src="https://placehold.co/600x400"
-            size="lg"
-            alt="Placeholder"
-          />
+          <Avatar src={post.author?.image} size="lg" alt="Placeholder" />
         </Link>
       </div>
       <Link href={`/course/${post._id}`}>

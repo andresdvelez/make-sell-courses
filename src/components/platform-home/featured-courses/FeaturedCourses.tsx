@@ -1,7 +1,8 @@
-import { StartupCard } from "./StartupCard";
+import { CourseCard } from "./CourseCard";
 import { COURSES_QUERY } from "@/sanity/lib/queries";
 import { CourseType } from "@/types/courses";
 import { SanityLive, sanityFetch } from "@/sanity/lib/live";
+import { auth } from "@/auth";
 
 export const FeaturedCourses = async ({
   searchParams,
@@ -10,6 +11,10 @@ export const FeaturedCourses = async ({
 }) => {
   const query = (await searchParams).query;
   const params = { search: query || null };
+
+  const session = await auth();
+
+  console.log(session?.id);
 
   const { data: posts } = await sanityFetch({ query: COURSES_QUERY, params });
 
@@ -21,8 +26,8 @@ export const FeaturedCourses = async ({
         </p>
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
-            posts.map((post: CourseType) => (
-              <StartupCard key={post._id} post={post} />
+            posts.map((post) => (
+              <CourseCard key={post._id} post={post as CourseType} />
             ))
           ) : (
             <p className="">No courses found</p>

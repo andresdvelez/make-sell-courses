@@ -14,3 +14,36 @@ export const COURSES_QUERY =
         category,
         image
     }`);
+
+export const COURSES_BY_ID_QUERY =
+  defineQuery(`*[_type == "course" && _id == $id][0] {
+        _id,
+        title,
+        slug, 
+        _createdAt,
+        author -> {
+            _id, name, username, image, bio
+        },
+        views, 
+        description, 
+        category,
+        image,
+        pitch
+    }`);
+
+export const COURSE_VIEW_QUERY =
+  defineQuery(`*[_type == "course" && _id == $id][0] {
+        _id, views
+    }`);
+
+export const AUTHOR_BY_GOOGLE_ID_QUERY = defineQuery(`
+    *[_type == "author" && id == $id][0] {
+        _id,
+        id,
+        name,
+        username,
+        email,
+        image,
+        bio
+    }
+    `);
