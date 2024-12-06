@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { getMessages } from "next-intl/server";
-import "../globals.css";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { Providers } from "@/components/providers";
+import "../globals.css";
+import "easymde/dist/easymde.min.css";
 
 const workSans = localFont({
   src: [
