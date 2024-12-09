@@ -7,7 +7,7 @@ import React from "react";
 export const Logo = () => {
   return (
     <Link href={"/"}>
-      <Image src="/logo.png" radius="none" alt="Logo" width={100} />
+      <Image src="/logo.png" radius="none" alt="Logo" width={120} />
     </Link>
   );
 };

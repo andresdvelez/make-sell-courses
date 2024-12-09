@@ -58,7 +58,7 @@ const CoursePage = async ({ params }: { params: Promise<{ id: string }> }) => {
           )}
         </div>
         <hr className="divider" />
-        {/* TODO: Editor selected startups */}
+        {/* TODO: Editor selected courses */}
         <Suspense fallback={<Skeleton className="view_skeleton" />}>
           <View id={id} />
         </Suspense>

@@ -9,7 +9,7 @@ export const CourseCard = ({ post }: { post: CourseType }) => {
   return (
     <li className="course-card group">
       <div className="flex-between">
-        <p className="startup_card_date">{formatDate(post._createdAt)}</p>
+        <p className="course-card_date">{formatDate(post._createdAt)}</p>
         <div className="flex gap-1.5 items-center">
           <i
             className="icon-[akar-icons--eye] size-5 text-primary"
@@ -32,18 +32,21 @@ export const CourseCard = ({ post }: { post: CourseType }) => {
           <Avatar src={post.author?.image} size="lg" alt="Placeholder" />
         </Link>
       </div>
-      <Link href={`/course/${post._id}`}>
-        <p className="startup-card_desc">{post.description}</p>
+      <Link
+        href={`/course/${post._id}`}
+        className="flex items-center justify-center flex-col"
+      >
+        <p className="course-card_desc">{post.description}</p>
         <Image
           isZoomed
           src={post.image}
           alt="Placeholder"
-          className="startup-card_img"
+          className="course-card_img"
         />
       </Link>
       <div className="flex-between gap-3 mt-5">
         <Link href={`/?query=${post.category?.toLowerCase()}`}>
-          <Chip className="text-16-medium" color="secondary">
+          <Chip className="text-16-medium !h-10" color="secondary">
             {post.category}
           </Chip>
         </Link>

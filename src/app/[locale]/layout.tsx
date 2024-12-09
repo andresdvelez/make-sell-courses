@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { Providers } from "@/components/providers";
+import { Toaster } from "sonner";
 import "../globals.css";
 import "easymde/dist/easymde.min.css";
 
@@ -80,6 +81,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${workSans.variable} antialiased`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
+          <Toaster richColors />
           <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>

@@ -145,7 +145,7 @@
   }
 
   .course-card_img {
-    @apply w-full h-[164px] rounded-[10px] object-cover;
+    @apply w-full h-[204px] rounded-[10px] object-cover;
   }
 
   .course-card_btn {
@@ -153,7 +153,7 @@
   }
 
   .course-card_skeleton {
-    @apply w-full h-96 rounded-[22px] bg-zinc-400;
+    @apply w-full h-96 rounded-[22px];
   }
 
   /* courseform */
@@ -199,11 +199,13 @@
   }
 
   .pattern {
-    background-image: linear-gradient(to right,
-        transparent 49.5%,
-        rgba(251, 232, 67, 0.2) 49.5%,
-        rgba(251, 232, 67, 0.6) 50.5%,
-        transparent 50.5%);
+    background-image: linear-gradient(
+      to right,
+      transparent 49.5%,
+      rgba(251, 232, 67, 0.2) 49.5%,
+      rgba(251, 232, 67, 0.6) 50.5%,
+      transparent 50.5%
+    );
     background-size: 5% 100%;
     background-position: center;
     background-repeat: repeat-x;
