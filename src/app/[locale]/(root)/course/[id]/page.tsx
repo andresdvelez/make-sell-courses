@@ -1,6 +1,9 @@
 import { Link } from "@/i18n/routing";
 import { client } from "@/sanity/lib/client";
-import { COURSES_BY_ID_QUERY } from "@/sanity/lib/queries";
+import {
+  COURSES_BY_ID_QUERY,
+  PLAYLIST_BY_SLUG_QUERY,
+} from "@/sanity/lib/queries";
 import { formatDate } from "@/utils/formatDate";
 import { Image, Skeleton, User } from "@nextui-org/react";
 import { notFound } from "next/navigation";
@@ -8,6 +11,11 @@ import { notFound } from "next/navigation";
 import markdownit from "markdown-it";
 import { Suspense } from "react";
 import { View } from "@/components/course-details/View";
+import { RecommendedCourses } from "@/components/course-details/RecommendedCourses";
+import {
+  COURSES_BY_ID_QUERYResult,
+  PLAYLIST_BY_SLUG_QUERYResult,
+} from "@/types/sanity";
 
 const md = markdownit();
 
@@ -16,7 +24,17 @@ export const experimental_ppr = true;
 const CoursePage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
-  const post = await client.fetch(COURSES_BY_ID_QUERY, { id });
+  const [post, playlist]: [
+    COURSES_BY_ID_QUERYResult,
+    PLAYLIST_BY_SLUG_QUERYResult,
+  ] = await Promise.all([
+    client.fetch(COURSES_BY_ID_QUERY, { id }),
+    client.fetch(PLAYLIST_BY_SLUG_QUERY, {
+      slug: "accesorios",
+    }),
+  ]);
+
+  const editorPosts = playlist?.select ?? [];
 
   if (!post) return notFound();
 
@@ -58,7 +76,10 @@ const CoursePage = async ({ params }: { params: Promise<{ id: string }> }) => {
           )}
         </div>
         <hr className="divider" />
-        {/* TODO: Editor selected courses */}
+        {editorPosts?.length > 0 && (
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          <RecommendedCourses courses={editorPosts as any} />
+        )}
         <Suspense fallback={<Skeleton className="view_skeleton" />}>
           <View id={id} />
         </Suspense>

@@ -6,7 +6,8 @@ import React from "react";
 const CreateCourse = async () => {
   const session = await auth();
 
-  if (!session) redirect("/");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if (!session) redirect("/" as any);
 
   return (
     <>

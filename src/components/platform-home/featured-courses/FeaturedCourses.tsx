@@ -2,6 +2,8 @@ import { CourseCard } from "./CourseCard";
 import { COURSES_QUERY } from "@/sanity/lib/queries";
 import { CourseType } from "@/types/courses";
 import { SanityLive, sanityFetch } from "@/sanity/lib/live";
+import { Suspense } from "react";
+import { CourseCardSkeleton } from "@/components/skeletons/CourseCardSkeleton";
 
 export const FeaturedCourses = async ({
   searchParams,
@@ -21,9 +23,11 @@ export const FeaturedCourses = async ({
         </p>
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
-            posts.map((post) => (
-              <CourseCard key={post._id} post={post as CourseType} />
-            ))
+            <Suspense fallback={<CourseCardSkeleton />}>
+              {posts.map((post) => (
+                <CourseCard key={post._id} post={post as CourseType} />
+              ))}
+            </Suspense>
           ) : (
             <p className="">No courses found</p>
           )}

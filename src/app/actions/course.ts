@@ -6,6 +6,7 @@ import { parseServerActionResponse } from "@/utils/parseServerActionResponse";
 import slugify from "slugify";
 
 export const createCourse = async (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   state: any,
   form: FormData,
   pitch: string

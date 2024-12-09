@@ -10,8 +10,8 @@ export const UserCourses = async ({ id }: { id: string }) => {
   return (
     <>
       {courses.length > 0 ? (
-        courses.map((startup: CourseType) => (
-          <CourseCard key={startup._id} post={startup} />
+        courses.map((startup) => (
+          <CourseCard key={startup._id} post={startup as CourseType} />
         ))
       ) : (
         <p className="no-result">No posts yet</p>
