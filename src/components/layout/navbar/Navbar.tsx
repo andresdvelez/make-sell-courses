@@ -1,6 +1,5 @@
 import LanguageChanger from "@/components/common/language-changer";
 import { Logo } from "@/components/common/logo";
-import React from "react";
 import { UserActions } from "./UserActions";
 
 export const Navbar = async () => {
@@ -9,9 +8,9 @@ export const Navbar = async () => {
       <nav className="flex justify-between items-center">
         <Logo />
       </nav>
-      <UserActions />
-      <div className="min-w-[4rem]">
+      <div className="min-w-[4rem] flex items-center gap-">
         <LanguageChanger />
+        <UserActions />
       </div>
     </header>
   );

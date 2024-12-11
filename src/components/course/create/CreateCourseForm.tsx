@@ -32,7 +32,7 @@ export const CreateCourseForm = () => {
       if (result.status == "SUCCESS") {
         toast.success("Your course has been created successfully");
 
-        router.push(`/course/${result._id}`);
+        router.push(`/app/course/${result._id}`);
       }
 
       return result;

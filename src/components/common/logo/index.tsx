@@ -1,13 +1,12 @@
-"use client";
-
 import { Link } from "@/i18n/routing";
-import { Image } from "@nextui-org/react";
-import React from "react";
 
 export const Logo = () => {
   return (
     <Link href={"/"}>
-      <Image src="/logo.png" radius="none" alt="Logo" width={120} />
+      {/* <Image src="/logo.png" radius="none" alt="Logo" width={120} /> */}
+      <h1 className="font-work-sans font-bold uppercase tracking-wider">
+        Artistry
+      </h1>
     </Link>
   );
 };

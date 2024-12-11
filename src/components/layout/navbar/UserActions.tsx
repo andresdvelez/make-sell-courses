@@ -9,11 +9,11 @@ export const UserActions = async () => {
   const session = await auth();
 
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center">
       {session && session?.user ? (
         <>
           <Link
-            href="/course/create"
+            href="/app/course/create"
             className="flex items-center justify-center"
           >
             <span className="max-sm:hidden">Create</span>
@@ -25,12 +25,11 @@ export const UserActions = async () => {
           </Link>
           <LogOut />
           <Link
-            href={`/user/${session?.id}`}
+            href={`/app/user/${session?.id}`}
             className="flex items-center justify-center"
           >
             <Avatar
-              fallback="AV"
-              src={session.user?.image || ""}
+              src={session.user?.image}
               alt={`${session.user?.name} avatar` || ""}
             />
           </Link>

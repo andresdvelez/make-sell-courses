@@ -24,6 +24,11 @@ export default function LanguageChanger() {
       disableSelectorIconRotation
       selectorIcon={<TranslatorIcon />}
       aria-label="Language selector"
+      classNames={{
+        listboxWrapper: "p-0",
+        listbox: "p-0 rounded-md",
+        popoverContent: "p-0 rounded-md",
+      }}
     >
       {LANGUAGES.map((language) => (
         <SelectItem key={language.value} value={language.value}>

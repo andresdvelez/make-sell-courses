@@ -12,7 +12,7 @@ const CreateCourse = async () => {
   return (
     <>
       <section className="pink_container !min-h-[230px]">
-        <h1 className="heading">Submit your course</h1>
+        <h2 className="heading">Submit your course</h2>
       </section>
       <CreateCourseForm />
     </>

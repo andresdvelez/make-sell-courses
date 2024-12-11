@@ -20,7 +20,7 @@ export const FormResetBtn = () => {
       className="search-btn"
     >
       <Link
-        href={"/"}
+        href={"/app"}
         className="text-white-100 flex items-center justify-center text-xl"
       >
         <i className="icon-[line-md--close]" role="img" aria-hidden="true"></i>

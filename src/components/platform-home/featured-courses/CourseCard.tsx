@@ -21,19 +21,19 @@ export const CourseCard = ({ post }: { post: CourseType }) => {
       </div>
       <div className="flex-between mt-5 gap-5">
         <div className="flex-1">
-          <Link href={`/user/${post.author?._id}`}>
+          <Link href={`/app/user/${post.author?._id}`}>
             <p className="text-16-medium line-clamp-1">{post.author?.name}</p>
           </Link>
-          <Link href={`/course/${post._id}`}>
+          <Link href={`/app/course/${post._id}`}>
             <h3 className="text-26-semibold line-clamp-1">{post.title}</h3>
           </Link>
         </div>
-        <Link href={`/user/${post.author?._id}`}>
+        <Link href={`/app/user/${post.author?._id}`}>
           <Avatar src={post.author?.image} size="lg" alt="Placeholder" />
         </Link>
       </div>
       <Link
-        href={`/course/${post._id}`}
+        href={`/app/course/${post._id}`}
         className="flex items-center justify-center flex-col"
       >
         <p className="course-card_desc">{post.description}</p>
@@ -51,7 +51,7 @@ export const CourseCard = ({ post }: { post: CourseType }) => {
           </Chip>
         </Link>
         <Button className="course-card_btn">
-          <Link href={`/course/${post._id}`}>Start course</Link>
+          <Link href={`/app/course/${post._id}`}>Start course</Link>
         </Button>
       </div>
     </li>
