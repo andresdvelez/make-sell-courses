@@ -6,6 +6,7 @@ export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/constants/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./sanity/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
@@ -14,6 +15,9 @@ export default {
     extend: {
       screens: {
         xs: "475px",
+      },
+      height: {
+        "no-header": "calc(100vh - 64px)",
       },
       colors: {
         primary: {
@@ -39,6 +43,9 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      animation: {
+        "spin-slow": "spin 10s linear infinite",
       },
       boxShadow: {
         100: "2px 2px 0px 0px rgb(0, 0, 0)",

@@ -7,8 +7,13 @@ import React from "react";
 export const SignIn = () => {
   return (
     <form action={logIn}>
-      <Button className="text-black" type="submit">
-        Sign In
+      <Button
+        radius="full"
+        className="hover-btn"
+        variant="bordered"
+        type="submit"
+      >
+        <span className="z-10 font-medium">Sign in</span>
       </Button>
     </form>
   );

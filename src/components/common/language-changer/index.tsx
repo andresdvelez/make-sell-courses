@@ -24,9 +24,12 @@ export default function LanguageChanger() {
       disableSelectorIconRotation
       selectorIcon={<TranslatorIcon />}
       aria-label="Language selector"
+      className="rounded-full"
+      variant="bordered"
       classNames={{
         listboxWrapper: "p-0",
-        listbox: "p-0 rounded-md",
+        trigger: "rounded-full border border-black-100",
+        listbox: "p-0 rounded-md border-2",
         popoverContent: "p-0 rounded-md",
       }}
     >

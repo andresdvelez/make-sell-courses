@@ -8,7 +8,7 @@ export const Navbar = async () => {
       <nav className="flex justify-between items-center">
         <Logo />
       </nav>
-      <div className="min-w-[4rem] flex items-center gap-">
+      <div className="flex items-center gap-6">
         <LanguageChanger />
         <UserActions />
       </div>

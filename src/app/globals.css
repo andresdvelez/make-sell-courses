@@ -47,6 +47,10 @@
     @apply font-normal text-sm text-white-100/80;
   }
 
+  .content-container {
+    @apply mx-auto w-full px-4 md:px-16 xl:px-20 2xl:px-36;
+  }
+
   .pink_container {
     @apply w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
   }
@@ -199,13 +203,11 @@
   }
 
   .pattern {
-    background-image: linear-gradient(
-      to right,
-      transparent 49.5%,
-      rgba(251, 232, 67, 0.2) 49.5%,
-      rgba(251, 232, 67, 0.6) 50.5%,
-      transparent 50.5%
-    );
+    background-image: linear-gradient(to right,
+        transparent 49.5%,
+        rgba(251, 232, 67, 0.2) 49.5%,
+        rgba(251, 232, 67, 0.6) 50.5%,
+        transparent 50.5%);
     background-size: 5% 100%;
     background-position: center;
     background-repeat: repeat-x;
@@ -213,6 +215,10 @@
 
   .tag-tri {
     @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+  }
+
+  .hover-btn {
+    @apply border-black-100 relative before:absolute before:w-full before:h-full before:top-12 before:-left-[100%] before:rounded-full before:bg-blue-400 group-hover:before:left-0 group-hover:before:top-0 before:transition-all before:duration-250 border;
   }
 }
 
