@@ -1,5 +1,6 @@
 import { Image } from "@nextui-org/react";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const FEATURED_COURSES = (t: (key: string) => string) => {
   return [
     {
