@@ -1,9 +1,18 @@
-import { Avatar, AvatarGroup, Card } from "@nextui-org/react";
+import {
+  Avatar,
+  AvatarGroup,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Divider,
+} from "@nextui-org/react";
 import React from "react";
 
 export const Pricing = () => {
   return (
-    <section className="flex flex-col gap-12 content-container pt-44 relative">
+    <section className="flex flex-col gap-12 items-center content-container pt-44 relative">
       {/* Background Curve SVG */}
       <svg
         className="absolute inset-x-[28rem] md:inset-x-[40rem] lg:inset-x-[74rem] inset-y-28 md:inset-y-36 lg:inset-y-[300px] w-full h-full -z-10 scale-[3] md:scale-[2] lg:scale-150"
@@ -19,7 +28,7 @@ export const Pricing = () => {
           strokeWidth="4"
         />
       </svg>
-      <aside className="flex lg:items-center justify-between">
+      <aside className="flex lg:items-center justify-between w-full">
         <div className="flex flex-col gap-6 font-semibold text">
           <h3 className="flex flex-col font-semibold text-6xl lg:text-7xl text-center md:text-start">
             Start now{" "}
@@ -43,7 +52,46 @@ export const Pricing = () => {
           <p className="font-medium w-max">+345 studying with us</p>
         </Card>
       </aside>
-      <Card shadow="none" className="bg-blue-50 w-full h-96 rounded-3xl"></Card>
+      <Card shadow="sm" className="h-96 rounded-3xl p-6">
+        <CardHeader className="flex flex-col gap-2">
+          <p className="text-4xl self-start">
+            $7<span className="text-sm">/month</span>
+          </p>
+          <p className="">Perfect to start your side hustle business</p>
+        </CardHeader>
+        <Divider />
+        <CardBody as="ul" className="flex flex-col gap-4 mt-4 overflow-hidden">
+          <li className="flex items-center gap-3">
+            <i
+              className="icon-[lineicons--check] text-blue-300 text-xl"
+              role="img"
+              aria-hidden="true"
+            ></i>
+            <p>More than 150 products courses</p>
+          </li>
+          <li className="flex items-center gap-3">
+            <i
+              className="icon-[lineicons--check] text-blue-300 text-xl"
+              role="img"
+              aria-hidden="true"
+            ></i>
+            <p>Sugestions of how to sell each product</p>
+          </li>
+          <li className="flex items-center gap-3">
+            <i
+              className="icon-[lineicons--check] text-blue-300 text-xl"
+              role="img"
+              aria-hidden="true"
+            ></i>
+            <p>Unlimited access</p>
+          </li>
+        </CardBody>
+        <CardFooter>
+          <Button radius="full" className="bg-blue-200 w-full drop-shadow-sm">
+            Get started
+          </Button>
+        </CardFooter>
+      </Card>
     </section>
   );
 };

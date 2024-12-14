@@ -36,7 +36,7 @@ export const Cards = () => {
               <p className="italic text-xl font-work-sans">creation</p>
             </div>
             <Button
-              className="border-black-100 absolute top-4 right-4 hidden md:block"
+              className="border-black-100 absolute top-4 right-4 hidden md:flex items-center justify-center"
               variant="bordered"
               radius="full"
               isIconOnly

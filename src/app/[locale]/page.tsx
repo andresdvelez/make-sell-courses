@@ -1,3 +1,4 @@
+import { Footer } from "@/components/landing/footer/Footer";
 import { Features } from "@/components/landing/hero/Features";
 import { Hero } from "@/components/landing/hero/Hero";
 import { Pricing } from "@/components/landing/hero/Pricing";
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Hero />
       <Features />
       <Pricing />
+      <Footer />
     </main>
   );
 };

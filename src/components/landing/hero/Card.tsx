@@ -45,7 +45,7 @@ export const CardComponent = ({ feature, index }: Props) => {
           <p className="italic text-xl font-work-sans">{feature.subtitle}</p>
         </div>
         <Button
-          className="border-black-100 absolute top-4 right-4 hidden lg:block"
+          className="border-black-100 absolute top-4 right-4 hidden md:flex items-center justify-center"
           variant="bordered"
           radius="full"
           isIconOnly
