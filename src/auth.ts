@@ -13,7 +13,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async signIn({ user: { name, email, image }, profile }) {
       const googleId = profile?.sub;
       if (!googleId) {
-        console.error("Profile ID is undefined");
         return false;
       }
 
@@ -42,7 +41,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (account && profile) {
         const googleId = profile?.sub;
         if (!googleId) {
-          console.error("Profile ID is undefined");
           return token;
         }
 
