@@ -6,7 +6,7 @@ import { Cards } from "./Cards";
 
 export const Hero = () => {
   return (
-    <section className="content-container py-12 w-screen h-no-header relative flex flex-col justify-between gap-y-12">
+    <section className="content-container py-12 w-screen relative flex flex-col justify-between gap-y-12 overflow-hidden">
       {/* Background Curve SVG */}
       <svg
         className="absolute inset-x-12 lg:inset-x-0 -inset-y-16 md:inset-y-12 lg:inset-y-32 w-full h-full -z-10 scale-150 lg:scale-100 lg:!scale-x-125"
