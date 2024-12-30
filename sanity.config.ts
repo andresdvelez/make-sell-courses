@@ -16,9 +16,7 @@ import { structure } from "./src/sanity/structure";
 
 export default defineConfig({
   basePath: "/studio",
-  // @ts-expect-error
   projectId,
-  // @ts-expect-error
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
@@ -29,4 +27,4 @@ export default defineConfig({
     visionTool({ defaultApiVersion: apiVersion }),
     markdownSchema(),
   ],
-});
+} as { basePath: string; projectId: string; dataset: string });

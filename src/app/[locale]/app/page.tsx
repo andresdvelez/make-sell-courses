@@ -2,8 +2,11 @@ import { FeaturedCourses } from "@/components/platform-home/featured-courses/Fea
 import { Hero } from "@/components/platform-home/hero/Hero";
 import React from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const PlatformPage = (props: any) => {
+type PlatformPageProps = {
+  searchParams: Promise<{ query?: string }>;
+};
+
+const PlatformPage = (props: PlatformPageProps) => {
   return (
     <>
       <Hero {...props} />

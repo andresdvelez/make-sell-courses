@@ -7,6 +7,8 @@ import { CourseCard } from "../platform-home/featured-courses/CourseCard";
 export const UserCourses = async ({ id }: { id: string }) => {
   const courses = await client.fetch(COURSES_BY_AUTHOR_QUERY, { id });
 
+  console.log(courses);
+
   return (
     <>
       {courses.length > 0 ? (

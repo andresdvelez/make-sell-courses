@@ -2,7 +2,7 @@ import { Link } from "@/i18n/routing";
 import React from "react";
 import { LogOut } from "./LogOut";
 import { auth } from "@/auth";
-import { SignIn } from "./SignIn";
+import { SignInBtn } from "./SignInBtn";
 import { Avatar } from "@nextui-org/react";
 
 export const UserActions = async () => {
@@ -29,13 +29,13 @@ export const UserActions = async () => {
             className="flex items-center justify-center"
           >
             <Avatar
-              src={session.user?.image}
+              src={session.user?.image || ""}
               alt={`${session.user?.name} avatar` || ""}
             />
           </Link>
         </>
       ) : (
-        <SignIn />
+        <SignInBtn />
       )}
     </div>
   );

@@ -87,7 +87,10 @@ export const Pricing = () => {
           </li>
         </CardBody>
         <CardFooter>
-          <Button radius="full" className="bg-blue-200 w-full drop-shadow-sm">
+          <Button
+            radius="full"
+            className="bg-blue-200 w-full drop-shadow-sm font-medium"
+          >
             Get started
           </Button>
         </CardFooter>

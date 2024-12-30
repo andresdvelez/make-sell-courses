@@ -23,6 +23,10 @@ export const author = defineType({
       type: "string",
     }),
     defineField({
+      name: "hashPassword",
+      type: "string",
+    }),
+    defineField({
       name: "image",
       type: "url",
     }),

@@ -179,6 +179,7 @@ export type Author = {
   name?: string;
   username?: string;
   email?: string;
+  hashPassword?: string;
   image?: string;
   bio?: string;
 };
@@ -291,6 +292,18 @@ export type AUTHOR_BY_GOOGLE_ID_QUERYResult = {
   image: string | null;
   bio: string | null;
 } | null;
+// Variable: AUTHOR_BY_EMAIL_QUERY
+// Query: *[_type == "author" && email == $email][0] {        _id,        id,        name,        username,        email,        image,        bio,        hashPassword    }
+export type AUTHOR_BY_EMAIL_QUERYResult = {
+  _id: string;
+  id: number | null;
+  name: string | null;
+  username: string | null;
+  email: string | null;
+  image: string | null;
+  bio: string | null;
+  hashPassword: string | null;
+} | null;
 // Variable: AUTHOR_BY_ID_QUERY
 // Query: *[_type == "author" && _id == $id][0] {        _id,        id,        name,        username,        email,        image,        bio    }
 export type AUTHOR_BY_ID_QUERYResult = {
@@ -337,6 +350,7 @@ declare module "@sanity/client" {
     "*[_type == \"course\" && _id == $id][0] {\n        _id,\n        title,\n        slug, \n        _createdAt,\n        author -> {\n            _id, name, username, image, bio\n        },\n        views, \n        description, \n        category,\n        image,\n        pitch\n    }": COURSES_BY_ID_QUERYResult;
     "*[_type == \"course\" && _id == $id][0] {\n        _id, views\n    }": COURSE_VIEW_QUERYResult;
     "\n    *[_type == \"author\" && id == $id][0] {\n        _id,\n        id,\n        name,\n        username,\n        email,\n        image,\n        bio\n    }\n    ": AUTHOR_BY_GOOGLE_ID_QUERYResult;
+    "\n    *[_type == \"author\" && email == $email][0] {\n        _id,\n        id,\n        name,\n        username,\n        email,\n        image,\n        bio,\n        hashPassword\n    }\n    ": AUTHOR_BY_EMAIL_QUERYResult;
     "\n    *[_type == \"author\" && _id == $id][0] {\n        _id,\n        id,\n        name,\n        username,\n        email,\n        image,\n        bio\n    }\n    ": AUTHOR_BY_ID_QUERYResult;
     "*[_type == \"playlist\" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    select[]->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      author->{\n        _id,\n        name,\n        slug,\n        image,\n        bio\n      },\n      views,\n      description,\n      category,\n      image,\n      pitch\n    }\n  }": PLAYLIST_BY_SLUG_QUERYResult;
   }
